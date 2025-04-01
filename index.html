@@ -4,30 +4,50 @@
 	<meta charset="UTF-8">
 	<title>Backstage Talks Magazine</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+	      rel="stylesheet">
+
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-	<img src="./assets/images/logo.png" alt="Logo"/>
+<header class="header">
+	<img src="./assets/images/logo.png" alt="Logo" class="logo"/>
 </header>
 
 <main class="container">
 	<!-- TODO : For loop the article -->
-	<article>
-		<img src="./assets/images/backstagetalks_cover_issue_8.png" alt="Issue 8"/>
-		<h1>Issue #8</h1>
-		<p>or in <a href="#">selected stores</a>></p>
+	<article class="issue">
+		<img src="./assets/images/backstagetalks_cover_issue_8.png" alt="Issue 8" class="issue-image"/>
+		<h1 class="issue-title">Issue #8</h1>
+		<p class="issue-description">or in <a href="#">selected stores</a></p>
 	</article>
 </main>
 
-<footer>
-	<p>
+<footer class="footer">
+	<p class="footer-description">
 		Backstage Talks is a magazine of casual, but in depth dialogues on design and business. Our decisions shape and
 		influence this complex world—to have a chance to make the right ones, we need to talk.
+		<br/>
+		<span>&copy; 2025 <a href="">Publish by Büro Milk</a></span>
+		<a href="#">Privacy Policy</a>
 	</p>
-	<span>&copy; 2025 <a href="">Publish by Büro Milk</a></span>
+	<nav class="footer-nav">
+		<a href="mailto:info@backstagetalks.com">info@backstagetalks.com</a>
+		<ul class="menu-list">
+			<li class="menu-item"><a href="#">Issue #8</a></li>
+			<li class="menu-item"><a href="#">Issue #7</a></li>
+			<li class="menu-item"><a href="#">Issue #6</a></li>
+			<li class="menu-item"><a href="#">Issue #5</a></li>
+			<li class="menu-item"><a href="#">Issue #4</a></li>
+			<li class="menu-item"><a href="#">Issue #3</a></li>
+			<li class="menu-item"><a href="#">Issue #2</a></li>
+			<li class="menu-item"><a href="#">Issue #1</a></li>
+		</ul>
+	</nav>
 </footer>
 <script src="script.js"></script>
 </body>

@@ -1,0 +1,59 @@
+/* Variables */
+:root{
+    --blue: #00c1b5;
+}
+
+/* Global CSS */
+body{
+    background-color: var(--blue);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: inherit;
+}
+
+/* My CSS */
+.header{
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    right: auto;
+    padding-top: 1.25rem;
+
+    .logo{
+        width: 16.25rem;
+        height: 1.875rem;
+    }
+}
+
+.container{
+    text-align: center;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: auto;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 1rem);
+
+    .footer-description{
+        max-width: 20rem;
+        font-weight: bold;
+    }
+}
