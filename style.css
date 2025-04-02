@@ -9,6 +9,7 @@
 :root{
     --blue: #00c1b5;
     --font-size: 18px;
+    --issue-width: 26.25rem;
 }
 
 /* Global Styles */
@@ -19,7 +20,6 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-size);
     position: relative;
-    overflow: hidden;
 }
 
 ul{
@@ -99,7 +99,33 @@ p{
 
 /* MAIN */
 .container{
+    position: absolute;
+    top: 0;
+    left: calc(50% - (var(--issue-width) / 2));
     text-align: center;
+    z-index: 1000;
+}
+
+.issue{
+    max-width: var(--issue-width);
+    position: relative;
+
+    a{
+        color: white;
+        font-weight: bold;
+    }
+
+    span{
+        display: block;
+    }
+
+    .issue-image{
+        width: 100%;
+    }
+
+    .buy{
+        text-transform: uppercase;
+    }
 }
 
 /* Footer */
