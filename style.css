@@ -1,17 +1,24 @@
+/* CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Variables */
 :root{
     --blue: #00c1b5;
+    --font-size: 18px;
 }
 
-/* Global CSS */
+/* Global Styles */
 body{
     background-color: var(--blue);
-    margin: 0;
-    padding: 0;
-    position: relative;
     width: 100%;
     height: 100dvh;
     font-family: 'Roboto', sans-serif;
+    font-size: var(--font-size);
+    position: relative;
     overflow: hidden;
 }
 
@@ -23,15 +30,66 @@ ul{
 
 a{
     color: inherit;
+    text-decoration: none;
 }
 
-/* My CSS */
+p{
+    margin: 0;
+}
+
+/* Utility Classes */
+.text-underline{
+    text-decoration: underline;
+}
+
+.text-light{
+    font-weight: 300;
+}
+
+.fs-small{
+    font-size: 0.67em;
+}
+
+.fs-bold{
+    font-weight: bold;
+}
+
+.d-block{
+    display: block;
+}
+
+.link{
+    text-decoration: underline;
+    color: inherit;
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.link-reverse{
+    text-decoration: none;
+    color: inherit;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.active{
+    font-weight: bold;
+}
+
+/* Header */
 .header{
     position: absolute;
     top: 0;
     left: 1rem;
-    right: auto;
+    right: 1rem;
     padding-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .logo{
         width: 16.25rem;
@@ -39,21 +97,36 @@ a{
     }
 }
 
+/* MAIN */
 .container{
     text-align: center;
 }
 
+/* Footer */
 .footer{
     position: absolute;
-    bottom: 0;
-    left: 1rem;
-    right: auto;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 1rem);
+    align-items: flex-end;
 
     .footer-description{
         max-width: 20rem;
         font-weight: bold;
+
+        p{
+            line-height: 1.385em;
+        }
+
+        .policy{
+            display: block;
+            margin-top: 1.5em;
+        }
+    }
+
+    .footer-menu{
+        line-height: 1.575em;
     }
 }
