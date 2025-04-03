@@ -80,7 +80,7 @@ p{
     font-weight: bold;
 }
 
-/* Header */
+/* HEADER */
 .header{
     position: absolute;
     top: 0;
@@ -104,11 +104,27 @@ p{
     left: calc(50% - (var(--issue-width) / 2));
     text-align: center;
     z-index: 1000;
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    /* Hide the scroll bar */
+    -ms-overflow-style: none;   /* IE and Edge */
+    scrollbar-width: none;      /* Firefox */
+    &::-webkit-scrollbar{       /* Chrome */
+        display: none;
+    }
 }
 
 .issue{
     max-width: var(--issue-width);
-    position: relative;
+    scroll-snap-align: start;
+    /* border: 1px solid crimson; */
+
+    *:not(img){
+        margin-bottom: 1em;
+    }
 
     a{
         color: white;
@@ -117,6 +133,14 @@ p{
 
     span{
         display: block;
+    }
+
+    p{
+        font-size: 0.835em;
+    }
+
+    h2{
+        font-size: inherit;
     }
 
     .issue-image{
@@ -128,7 +152,7 @@ p{
     }
 }
 
-/* Footer */
+/* FOOTER */
 .footer{
     position: absolute;
     bottom: 1.25rem;
