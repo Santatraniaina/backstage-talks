@@ -12,8 +12,17 @@ function setAutoPaddingX() {
 }
 
 function scrollToIssue(e) {
-    console.log(e)
-    removeActive()
+    e.preventDefault();
+    removeActive();
+    issues.forEach(issue => {
+        if (issue.id === this.getAttribute('href').substring(1)) {
+            issue.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest'
+            });
+        }
+    });
     this.classList.add('active');
 }
 
@@ -29,8 +38,9 @@ setAutoPaddingX();
 window.addEventListener('resize', setAutoPaddingX);
 
 // Scroll sync between container and window
-document.addEventListener('scroll', function() {
+container.addEventListener('scroll', (e) => {
     console.log('scrolling');
+
 });
 
 menus.forEach(menu => menu.addEventListener('click', scrollToIssue));
