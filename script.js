@@ -21,6 +21,7 @@ function scrollToIssue(e) {
                 block: 'center',
                 inline: 'nearest'
             });
+            setBackgroundColor(issue.id);
         }
     });
     this.classList.add('active');
@@ -32,6 +33,10 @@ function removeActive() {
             menu.classList.remove('active');
         }
     }
+}
+
+function setBackgroundColor(issueName) {
+    document.body.style.backgroundColor = `var(--${issueName})`;
 }
 
 setAutoPaddingX();

@@ -7,20 +7,28 @@
 
 /* Variables */
 :root{
-    --blue: #00c1b5;
+    --issue-8: #f6e0a4;
+    --issue-7: #ff608c;
+    --issue-6: #ffffff;
+    --issue-5: #00c1b5;
+    --issue-4: #ff651a;
+    --issue-3: #ffbe00;
+    --issue-2: #1d3fbb;
+    --issue-1: #e30512;
+
     --font-size: 18px;
     --issue-width: 26.25rem;
 }
 
 /* Global Styles */
 body{
-    background-color: var(--blue);
     width: 100%;
     height: 100dvh;
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-size);
     position: relative;
     overflow: hidden;
+    transition: background-color 0.8s ease-in-out;
 }
 
 ul{
