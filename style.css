@@ -28,7 +28,7 @@ body{
     font-size: var(--font-size);
     position: relative;
     overflow: hidden;
-    transition: background-color 0.8s ease-in-out;
+    transition: background-color 0.7s;
 }
 
 ul{
@@ -89,6 +89,10 @@ p{
     font-weight: bold;
 }
 
+.color-reverse{
+    color: #e568ac !important;
+}
+
 /* HEADER */
 .header{
     position: absolute;
@@ -112,6 +116,7 @@ p{
     top: 0;
     left: 0;
     right: 0;
+    /* border: 2px solid var(--issue-1); */
     /* left: calc(50% - (var(--issue-width) / 2)); */
     text-align: center;
     z-index: 100;
@@ -133,7 +138,7 @@ p{
     max-width: var(--issue-width);
     scroll-snap-align: start;
     margin: 0 auto;
-    /* border: 1px solid crimson; */
+    /* border: 2px solid crimson; */
 
     *:not(img){
         margin-bottom: 1em;

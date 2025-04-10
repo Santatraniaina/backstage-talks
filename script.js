@@ -1,7 +1,5 @@
-const container = document.querySelector('.container');
 const issues = document.querySelectorAll('.issue');
 const menus = document.querySelectorAll('.footer-menu a');
-let lastScrollTop = 0;
 
 // Dynamic paddingX for issues
 function setAutoPaddingX() {
@@ -15,7 +13,6 @@ function setAutoPaddingX() {
 // Scroll to the issue on related menu click
 function scrollToIssue(e) {
     e.preventDefault();
-    removeActive();
     issues.forEach(issue => {
         if (issue.id === this.getAttribute('href').substring(1)) {
             issue.scrollIntoView({
@@ -23,10 +20,8 @@ function scrollToIssue(e) {
                 block: 'center',
                 inline: 'nearest'
             });
-            setBackgroundColor(issue.id);
         }
     });
-    this.classList.add('active');
 }
 
 function removeActive() {
@@ -41,24 +36,27 @@ function setBackgroundColor(issueName) {
     document.body.style.backgroundColor = `var(--${issueName})`;
 }
 
-function captureScroll(e){
-    console.log('Scrolling from CONTAINER');
-    if (e.target.scrollTop > lastScrollTop) {
-        console.log('Scrolling DOWN');
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const issue = entry.target;
+                setBackgroundColor(issue.id);
+                removeActive();
+                Array.from(menus).filter(
+                    menu => menu.getAttribute('href').substring(1) === issue.id
+                )[0].classList.add('active');
+            }
+        })
+    },
+    {
+        threshold: 0.65
     }
-    else {
-        console.log('Scrolling UP');
-    }
-    lastScrollTop = e.target.scrollTop;
-}
+);
 
 //TODO : Review auto paddingX resizing
-setBackgroundColor('issue-8');
 setAutoPaddingX();
 window.addEventListener('resize', setAutoPaddingX);
-
-// Scroll sync between container and window
-container.addEventListener('scroll', captureScroll);
-
 menus.forEach(menu => menu.addEventListener('click', scrollToIssue));
-// issues.forEach(issue => issue.addEventListener('scroll', captureScroll));
+issues.forEach(issue => observer.observe(issue));
