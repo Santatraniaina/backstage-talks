@@ -248,6 +248,11 @@ p {
     max-width: var(--issue-width);
     scroll-snap-align: start;
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid crimson; */
 
     *:not(img) {
@@ -339,7 +344,7 @@ p {
     }
 
     .container > .credit{
-        display: block;
+        display: flex;
 
         p{
             font-weight: bold;

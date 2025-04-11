@@ -1,14 +1,6 @@
 const issues = document.querySelectorAll('.issue');
 const menus = document.querySelectorAll('.footer-menu a');
 
-// Dynamic paddingX for issues
-function setAutoPaddingX() {
-    issues.forEach( (issue) => {
-        const padding = (window.innerHeight - issue.offsetHeight) / 2;
-        issue.style.paddingTop = `${padding}px`;
-        issue.style.paddingBottom = `${padding}px`;
-    });
-}
 
 // Scroll to the issue on related menu click
 function scrollToIssue(e) {
@@ -37,7 +29,7 @@ function setBackgroundColor(issueName) {
 }
 
 // Observe the current issue that is in view and set
-// the background color and active menu basedpn it
+// the background color and active menu based on it
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
@@ -56,8 +48,5 @@ const observer = new IntersectionObserver(
     }
 );
 
-//TODO : Review auto paddingX resizing
-setAutoPaddingX();
-window.addEventListener('resize', setAutoPaddingX);
 menus.forEach(menu => menu.addEventListener('click', scrollToIssue));
 issues.forEach(issue => observer.observe(issue));
