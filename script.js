@@ -36,7 +36,8 @@ function setBackgroundColor(issueName) {
     document.body.style.backgroundColor = `var(--${issueName})`;
 }
 
-
+// Observe the current issue that is in view and set
+// the background color and active menu basedpn it
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
