@@ -238,6 +238,10 @@ p {
     &::-webkit-scrollbar { /* Chrome */
         display: none;
     }
+
+    .credit{
+        display: none;
+    }
 }
 
 .issue {
@@ -334,12 +338,18 @@ p {
         }
     }
 
+    .container > .credit{
+        display: block;
+
+        p{
+            font-weight: bold;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+    }
+
     /* FOOTER */
     .footer {
         display: none;
-
-        .footer-menu {
-            display: none;
-        }
     }
 }
