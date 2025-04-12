@@ -1,0 +1,90 @@
+[
+    {
+        "id": "issue-8",
+        "name": "Issue #8",
+        "isSoldOut": false,
+        "image": "./assets/images/backstagetalks_cover_issue_8.png",
+        "buyLinks": [
+            {
+                "text": "Buy Here",
+                "url": "#"
+            }
+        ],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-7",
+        "name": "Issue #7",
+        "isSoldOut": false,
+        "image": "./assets/images/backstagetalks_cover_issue_7.png",
+        "buyLinks": [
+            {
+                "text": "Buy Here (Europe)",
+                "url": "#"
+            },
+            {
+                "text": "Buy Here (UK & Overseas)",
+                "url": "#"
+            }
+        ],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-6",
+        "name": "Issue #6",
+        "isSoldOut": false,
+        "image": "./assets/images/backstagetalks_cover_issue_6.png",
+        "buyLinks": [
+            {
+                "text": "Buy Here",
+                "url": "#"
+            }
+        ],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-5",
+        "name": "Issue #5",
+        "isSoldOut": false,
+        "image": "./assets/images/backstagetalks_cover_issue_5.png",
+        "buyLinks": [
+            {
+                "text": "Buy Here",
+                "url": "#"
+            }
+        ],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-4",
+        "name": "Issue #4",
+        "isSoldOut": true,
+        "image": "./assets/images/backstagetalks_cover_issue_4.png",
+        "buyLinks": [],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-3",
+        "name": "Issue #3",
+        "isSoldOut": true,
+        "image": "./assets/images/backstagetalks_cover_issue_3.png",
+        "buyLinks": [],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-2",
+        "name": "Issue #2",
+        "isSoldOut": true,
+        "image": "./assets/images/backstagetalks_cover_issue_2.png",
+        "buyLinks": [],
+        "storeLink": "#"
+    },
+    {
+        "id": "issue-1",
+        "name": "Issue #1",
+        "isSoldOut": true,
+        "image": "./assets/images/backstagetalks_cover_issue_1.png",
+        "buyLinks": [],
+        "storeLink": "#"
+    }
+]
