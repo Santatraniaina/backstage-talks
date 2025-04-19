@@ -40,6 +40,7 @@ ul {
 a {
     color: inherit;
     text-decoration: none;
+    z-index: 999;
 }
 
 p {
@@ -115,6 +116,7 @@ p {
 
 /* ===============| HAMBURGER MENU |================ */
 .hamburger-menu {
+    z-index: 9999;
     width: 35px;
     display: none;
     flex-direction: column;
@@ -227,6 +229,7 @@ p {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    transition: scroll-behavior 2s;
 
     /* Hide the scroll bar */
     -ms-overflow-style: none; /* IE and Edge */
@@ -244,6 +247,7 @@ p {
 .issue {
     max-width: var(--issue-width);
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -314,9 +318,6 @@ p {
 
 /* =========================== | MEDIA QUERIES | =========================== */
 @media (max-width: 1024px) {
-    .header {
-        z-index: 100;
-    }
 
     .container > .credit {
         display: flex;
@@ -340,7 +341,7 @@ p {
 @media (max-width: 650px) {
     .header {
         .logo {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
         }
 
