@@ -111,6 +111,7 @@ p {
     .logo {
         width: 16.25rem;
         height: 1.875rem;
+        z-index: 999;
     }
 }
 

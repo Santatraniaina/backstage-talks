@@ -33,7 +33,7 @@ function setBackgroundColor(issueName) {
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.classList.contains('credit')) {
                 const issue = entry.target;
                 setBackgroundColor(issue.id);
                 removeActive();
