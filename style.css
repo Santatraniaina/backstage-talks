@@ -363,7 +363,38 @@ p {
         }
     }
 
-    .footer {
+    .footer-description {
         display: none;
+    }
+
+    .float-menu{
+        position: fixed;
+        inset: 4rem 1rem 2rem 1rem;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 1rem;
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        transform-origin: top right;
+
+        li {
+            width: 95%;
+        }
+
+        a {
+            /*color: white;*/
+            font-weight: bold;
+            display: block;
+            padding: 1rem 0rem;
+            border-radius: 1rem;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
     }
 }

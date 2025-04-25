@@ -26,6 +26,13 @@ function removeActive() {
 
 function setBackgroundColor(issueName) {
     document.body.style.backgroundColor = `var(--${issueName})`;
+    /*if (document.querySelector('.footer-menu').classList.contains('float-menu')) {
+        for (const menu of menus) {
+            // menu.style.backgroundColor = `var(--${issueName})`;
+            // TODO : Color more pronounced
+            menu.style.color = `var(--${issueName})`;
+        }
+    }*/
 }
 
 // Observe the current issue that is in view and set
