@@ -40,7 +40,7 @@ ul {
 a {
     color: inherit;
     text-decoration: none;
-    z-index: 999;
+    /*z-index: 999;*/
 }
 
 p {
@@ -106,121 +106,51 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    pointer-events: none;
+    z-index: 999;
 
     .logo {
         width: 16.25rem;
         height: 1.875rem;
-        z-index: 999;
     }
 }
 
-/* ===============| HAMBURGER MENU |================ */
-.hamburger-menu {
+.hamburger-menu{
     z-index: 9999;
-    width: 35px;
-    display: none;
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 7px;
+    gap: 0.3rem;
 
-    &::before,
-    > input,
-    &::after {
-        content: "";
+    .bar{
+        display: block;
         width: 100%;
-        height: 3px;
-        background: #000;
-        transform-origin: center;
+        height: 0.25rem;
+        background: black;
+        transform-origin: 50% 50%;
+        transition: all 0.3s ease-in-out;
     }
 
-    > input {
-        appearance: none;
-        margin: 0;
-        transition: all 0.35s ease-out;
-
-        &:checked {
+    &.active{
+        .bar:nth-child(1){
+            transform: rotate(45deg) translateY(0.25rem);
+        }
+        .bar:nth-child(2){
             opacity: 0;
         }
-
-        &:not(:checked) {
-            opacity: 1;
+        .bar:nth-child(3){
+            transform: rotate(-45deg) translateY(-0.25rem);
         }
     }
 }
 
-
-.hamburger-menu:has(input:checked)::before {
-    animation: down-rotate 0.4s ease-out both;
-}
-
-@keyframes down-rotate {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(10px) rotate(45deg) scale(1);
-    }
-}
-
-.hamburger-menu:has(input:checked)::after {
-    animation: up-rotate 0.4s ease-out both;
-}
-
-@keyframes up-rotate {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(-10px) rotate(-45deg) scale(1);
-    }
-}
-
-/* Hamburger menu UNCHECKED */
-.hamburger-menu:has(input:not(:checked))::before {
-    animation: rotate-up 0.4s ease-out both;
-}
-
-@keyframes rotate-up {
-    0% {
-        transform: translateY(10px) rotate(45deg) scale(1);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.hamburger-menu:has(input:not(:checked))::after {
-    animation: rotate-down 0.4s ease-out both;
-}
-
-@keyframes rotate-down {
-    0% {
-        transform: translateY(-10px) rotate(-45deg) scale(1);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* ================================================= */
 
 /* MAIN */
 .container {
     position: absolute;
+    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
@@ -349,10 +279,6 @@ p {
         a {
             display: none !important;
         }
-
-        .hamburger-menu {
-            display: flex;
-        }
     }
 
     .container {
@@ -369,8 +295,12 @@ p {
 
     .float-menu{
         position: fixed;
-        inset: 4rem 1rem 2rem 1rem;
-        background: rgba(255, 255, 255, 1);
+        z-index: 9999;
+        top: 4rem;
+        right: calc((1rem + 250px) * -1);
+        bottom: auto;
+        width: 250px;
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 1rem;
         padding: 1rem;
         text-align: center;
@@ -380,6 +310,11 @@ p {
         align-items: center;
 
         transform-origin: top right;
+        transition: all 0.3s ease-in-out;
+
+        &.active{
+            right: 1rem;
+        }
 
         li {
             width: 95%;
@@ -389,7 +324,7 @@ p {
             /*color: white;*/
             font-weight: bold;
             display: block;
-            padding: 1rem 0rem;
+            padding: 1rem 0;
             border-radius: 1rem;
 
             &:hover{

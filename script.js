@@ -1,6 +1,6 @@
 const issues = document.querySelectorAll('.issue');
 const menus = document.querySelectorAll('.footer-menu a');
-
+const hamburgerMenu = document.querySelector('.hamburger-menu');
 
 // Scroll to the issue on related menu click
 function scrollToIssue(e) {
@@ -57,3 +57,8 @@ const observer = new IntersectionObserver(
 
 menus.forEach(menu => menu.addEventListener('click', scrollToIssue));
 issues.forEach(issue => observer.observe(issue));
+hamburgerMenu.addEventListener('click', () => {
+    const floatMenu = document.querySelector('.float-menu');
+    hamburgerMenu.classList.toggle('active');
+    floatMenu.classList.toggle('active');
+});
