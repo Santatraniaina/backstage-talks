@@ -1,6 +1,7 @@
 const issues = document.querySelectorAll('.issue');
 const menus = document.querySelectorAll('.footer-menu a');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
+const footerMenu = document.querySelector('.footer-menu');
 
 // Scroll to the issue on related menu click
 function scrollToIssue(e) {
@@ -31,9 +32,20 @@ function setBackgroundColor(issueName) {
 }
 
 function toggleMenu() {
-    const floatMenu = document.querySelector('.float-menu');
     hamburgerMenu.classList.toggle('active');
-    floatMenu.classList.toggle('active');
+    if (footerMenu.classList.contains('float-menu')) {
+        footerMenu.classList.toggle('active');
+    }
+}
+
+function handleResize() {
+    if (window.matchMedia('(max-width: 650px)').matches) {
+        footerMenu.classList.add('float-menu');
+    } else {
+        footerMenu.classList.remove('float-menu');
+        footerMenu.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
+    }
 }
 
 // Observe the current issue that is in view and set
@@ -59,3 +71,5 @@ const observer = new IntersectionObserver(
 menus.forEach(menu => menu.addEventListener('click', scrollToIssue));
 issues.forEach(issue => observer.observe(issue));
 hamburgerMenu.addEventListener('click', toggleMenu);
+window.addEventListener('resize', handleResize);
+handleResize();
