@@ -6,12 +6,14 @@ const hamburgerMenu = document.querySelector('.hamburger-menu');
 function scrollToIssue(e) {
     e.preventDefault();
     issues.forEach(issue => {
-        if (issue.id === this.getAttribute('href').substring(1)) {
+        const href = this.getAttribute('href').substring(1);
+        if (issue.id === href) {
             issue.scrollIntoView({
                 behavior: 'smooth',
                 block: 'center',
                 inline: 'nearest'
             });
+            toggleMenu();
         }
     });
 }
@@ -26,13 +28,12 @@ function removeActive() {
 
 function setBackgroundColor(issueName) {
     document.body.style.backgroundColor = `var(--${issueName})`;
-    /*if (document.querySelector('.footer-menu').classList.contains('float-menu')) {
-        for (const menu of menus) {
-            // menu.style.backgroundColor = `var(--${issueName})`;
-            // TODO : Color more pronounced
-            menu.style.color = `var(--${issueName})`;
-        }
-    }*/
+}
+
+function toggleMenu() {
+    const floatMenu = document.querySelector('.float-menu');
+    hamburgerMenu.classList.toggle('active');
+    floatMenu.classList.toggle('active');
 }
 
 // Observe the current issue that is in view and set
@@ -57,8 +58,4 @@ const observer = new IntersectionObserver(
 
 menus.forEach(menu => menu.addEventListener('click', scrollToIssue));
 issues.forEach(issue => observer.observe(issue));
-hamburgerMenu.addEventListener('click', () => {
-    const floatMenu = document.querySelector('.float-menu');
-    hamburgerMenu.classList.toggle('active');
-    floatMenu.classList.toggle('active');
-});
+hamburgerMenu.addEventListener('click', toggleMenu);

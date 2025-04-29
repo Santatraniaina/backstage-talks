@@ -40,7 +40,7 @@ ul {
 a {
     color: inherit;
     text-decoration: none;
-    /*z-index: 999;*/
+    z-index: 9999;
 }
 
 p {
@@ -305,7 +305,11 @@ p {
         right: calc((1rem + 250px) * -1);
         bottom: auto;
         width: 250px;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow:
+            rgba(10, 22, 36, 0.075) 0.120437px 0.48175px 1.2911px -0.833333px,
+            rgba(10, 22, 36, 0.075) 0.457707px 1.83083px 4.90665px -1.66667px,
+            rgba(10, 22, 36, 0.075) 2px 8px 21.4401px -2.5px;
         border-radius: 1rem;
         padding: 1rem;
         text-align: center;
@@ -326,14 +330,13 @@ p {
         }
 
         a {
-            /*color: white;*/
-            font-weight: bold;
             display: block;
             padding: 1rem 0;
             border-radius: 1rem;
 
             &:hover{
                 text-decoration: none;
+                transform: scale(1.1);
             }
         }
     }
