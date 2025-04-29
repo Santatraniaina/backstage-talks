@@ -40,6 +40,7 @@ ul {
 a {
     color: inherit;
     text-decoration: none;
+    position: relative;
     z-index: 9999;
 }
 
@@ -69,7 +70,6 @@ p {
 }
 
 .link {
-    pointer-events: all !important;
     text-decoration: underline;
     color: inherit;
 
@@ -79,7 +79,6 @@ p {
 }
 
 .link-reverse {
-    pointer-events: all !important;
     text-decoration: none;
     color: inherit;
 
@@ -106,7 +105,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    z-index: 500;
 
     .logo {
         width: 16.25rem;
@@ -115,7 +114,6 @@ p {
 }
 
 .hamburger-menu{
-    z-index: 9999;
     width: 2rem;
     height: 2rem;
 
@@ -151,7 +149,7 @@ p {
 /* MAIN */
 .container {
     position: absolute;
-    z-index: 100;
+    z-index: 200;
     top: 0;
     left: 0;
     right: 0;
@@ -226,7 +224,6 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    pointer-events: none;
 
     .footer-description {
         max-width: 20rem;
@@ -300,7 +297,7 @@ p {
 
     .float-menu{
         position: fixed;
-        z-index: 9999;
+        z-index: 500;
         top: 4rem;
         right: calc((1rem + 250px) * -1);
         bottom: auto;
